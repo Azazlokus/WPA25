@@ -14,9 +14,8 @@ if (!$user->isAdmin) die('Доступ закрыт');
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
           crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
-    <link href="assets/css/style.css" rel="stylesheet"/>
+    <link href="<?php echo get_template_directory_uri(); ?>/assets/css/style.css" rel="stylesheet"/>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.0/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="/resources/demos/style.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
             crossorigin="anonymous"></script>
@@ -25,7 +24,7 @@ if (!$user->isAdmin) die('Доступ закрыт');
 <div class="container">
     <div class="row row-header">
         <div class="col-8" id="count">
-            <img src="assets/img/logo.png" alt="logo" style="max-height:50px"/>
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.png" alt="logo" style="max-height:50px"/>
             <h1>Панель администратора</h1>
         </div>
         <div class="col-4">
@@ -118,7 +117,8 @@ if (!$user->isAdmin) die('Доступ закрыт');
         </div>
     </div>
 </div>
-<script src="assets/js/admin/product_management.js"></script>
-<script src="assets/js/admin/search_and_statistics.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/assets/js/config.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/assets/js/admin/product_management.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/assets/js/admin/search_and_statistics.js"></script>
 </body>
 </html>

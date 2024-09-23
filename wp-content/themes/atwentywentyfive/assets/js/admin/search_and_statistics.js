@@ -6,7 +6,7 @@ $(document).ready(function () {
 
     function updateStatistics() {
         $.ajax({
-            url: 'ProductController.php?action=getStatistics',
+            url: baseUrl + 'App/Application/Controllers/ProductController.php?action=getStatistics',
             type: 'GET',
             dataType: 'json',
             success: function (response) {
@@ -27,7 +27,7 @@ $(document).ready(function () {
     function searchProduct(productName) {
         if (productName.trim()) {
             $.ajax({
-                url: 'ProductController.php?action=search',
+                url: baseUrl + 'App/Application/Controllers/ProductController.php?action=search',
                 type: 'GET',
                 data: {name: productName},
                 dataType: 'json',

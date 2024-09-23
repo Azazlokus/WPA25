@@ -1,4 +1,5 @@
 <?php
+
 require_once __DIR__ . '/vendor/autoload.php';
 
 use App\Infrastructure\DataAdapter;
@@ -6,6 +7,12 @@ use App\Infrastructure\DataAdapter;
 $dataAdapter = new DataAdapter();
 $services = $dataAdapter->getServices();
 $products = $dataAdapter->getProducts();
+$requested_uri = $_SERVER['REQUEST_URI'];
+
+if ($requested_uri == '/management') {
+    include('admin.php');
+    exit;
+}
 ?>
 <html>
 <head>

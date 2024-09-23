@@ -38,7 +38,7 @@ $(document).ready(function () {
 
     function loadProducts() {
         $.ajax({
-            url: 'ProductController.php?action=get',
+            url: baseUrl + 'App/Application/Controllers/ProductController.php?action=get',
             type: 'GET',
             dataType: 'json',
             success: function (response) {
@@ -77,7 +77,7 @@ $(document).ready(function () {
         var formData = new FormData(this);
 
         $.ajax({
-            url: 'ProductController.php?action=add',
+            url: baseUrl + 'App/Application/Controllers/ProductController.php?action=add',
             type: 'POST',
             processData: false,
             contentType: false,
@@ -103,7 +103,7 @@ $(document).ready(function () {
         var id = $(this).data('id');
         if (confirm('Вы уверены, что хотите удалить этот продукт?')) {
             $.ajax({
-                url: 'ProductController.php?action=delete',
+                url: baseUrl + 'App/Application/Controllers/ProductController.php?action=delete',
                 type: 'POST',
                 data: {id: id},
                 dataType: 'json',
@@ -125,7 +125,7 @@ $(document).ready(function () {
     $(document).on('click', '.edit-product', function () {
         var id = $(this).data('id');
         $.ajax({
-            url: 'ProductController.php?action=getProduct',
+            url: baseUrl + 'App/Application/Controllers/ProductController.php?action=getProduct',
             type: 'GET',
             data: {id: id},
             dataType: 'json',
@@ -151,7 +151,7 @@ $(document).ready(function () {
         e.preventDefault();
         var formData = $(this).serialize();
         $.ajax({
-            url: 'ProductController.php?action=update',
+            url: baseUrl + 'App/Application/Controllers/ProductController.php?action=update',
             type: 'POST',
             data: formData,
             dataType: 'json',
